@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gline1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gline2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <EditText
+        android:id="@+id/et_recv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:drawable/edit_text"
+        android:editable="false"
+        android:gravity="top"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/gline2"
+        app:layout_constraintEnd_toEndOf="@id/gline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="清除"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gline1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/gb_data_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gline1"
+        app:layout_constraintTop_toBottomOf="@id/btn_clear">
+
+        <RadioButton
+            android:id="@+id/rb_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Txt"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <RadioButton
+            android:id="@+id/rb_hex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Hex"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_show_line"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/edit_text"
+        android:enabled="false"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gline1"
+        app:layout_constraintTop_toBottomOf="@id/gb_data_type" />
+
+    <CheckBox
+        android:id="@+id/cb_auto_clear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="自清"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gline1"
+        app:layout_constraintTop_toBottomOf="@id/et_show_line"
+        tools:ignore="TouchTargetSizeCheck" />
+
+
+    <!--==========================================================-->
+    <Button
+        android:id="@+id/btn_send"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="发送"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gline1" />
+
+    <CheckBox
+        android:id="@+id/cb_auto_send"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="自动"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/btn_send"
+        app:layout_constraintEnd_toStartOf="@id/btn_send"
+        app:layout_constraintTop_toTopOf="@id/btn_send" />
+
+    <TextView
+        android:id="@+id/tv_ms"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="ms"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/btn_send"
+        app:layout_constraintEnd_toStartOf="@id/cb_auto_send"
+        app:layout_constraintTop_toTopOf="@id/btn_send" />
+
+    <EditText
+        android:id="@+id/et_time"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:drawable/edit_text"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:text="500"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_send"
+        app:layout_constraintEnd_toStartOf="@id/tv_ms"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_send" />
+
+    <!--====================================================================-->
+
+    <ToggleButton
+        android:id="@+id/tb_open"
+        style="@android:style/Widget.Button.Toggle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_send"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gline1" />
+
+    <Spinner
+        android:id="@+id/sp_baud_rate"
+        style="@android:style/Widget.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/tb_open"
+        app:layout_constraintEnd_toStartOf="@id/tb_open"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tb_open"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+    <Button
+        android:id="@+id/btn_none"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="none"
+        android:textSize="18sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/tb_open"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/gline1" />
+
+    <Spinner
+        android:id="@+id/sp_com_port"
+        style="@android:style/Widget.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/btn_none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_none"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/et_send_data"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:drawable/edit_text"
+        android:gravity="top"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        android:text="ComA"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/sp_com_port"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gline2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
